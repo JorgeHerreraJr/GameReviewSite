@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>
+<html class="no-js"> <![endif]-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Game Reviews - Review</title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="/css/styles.css"/>
+    <link rel="stylesheet" href="/css/layout.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<!--[if lt IE 7]>
+<p class="browsehappy">
+    You are using an <strong>outdated</strong> browser. Please
+    <a href="#">upgrade your browser</a> to improve your experience.
+</p>
+<![endif]-->
+<header th:insert="general.html :: header" id="header">
+</header>
+<main>
+    <section class="reviews">
+        <article class="game-review">
+            <div class="review-head-info">
+                <h1 th:text="${individualReview.gameTitle}"></h1>
+                <h3 th:text="${individualReview.platforms}"></h3>
+            </div>
+            <div class="review-content">
+                <img
+                        class="review-image"
+                        th:src="${individualReview.imageUrl}"
+                        th:alt="${individualReview.imageAltText}"
+                />
+                <h3 th:text="${individualReview.reviewTitle}"></h3>
+                <p th:text="${individualReview.reviewContent}" class="review-text">
+                </p>
+            </div>
+        </article>
+    </section>
+    <section class="hashtag-info">
+        <div class="all-hashtags">
+            <h3>Related Tags</h3>
+            <ul>
+                <li class="game-tags" th:each="current:${individualHashtag}"><a
+                        th:href="@{/hashtags/hashtag(id=${current.id})}" th:text="${current.hashtagName}"></a></li>
+            </ul>
+        </div>
+        <div class="manage-hashtags">
+            <h3>Add Hashtags</h3>
+            <form action="/categories/category/add-hashtag" id="userHashtag" method="POST">
+                <input type="text" name="hashtag" form="userHashtag">
+                <input type="hidden" id="gamereviewidaddHashtag" name="gamereviewid"
+                       th:value="${individualReview.getId()}">
+                <input class="submit-button" type="submit" value="Add Hashtag">
+            </form>
+        </div>
+    </section>
+    <section class="user-review-info">
+        <div class="user-review">
+            <h3>Leave Guest Review</h3>
+            <form action="/categories/category/add-review" id="guestReview" method="POST">
+                <ul>
+                    <li><input type="hidden" id="gamereviewidaddGuestReview" name="gamereviewid"
+                               th:value="${individualReview.getId()}"></li>
+                    <li><label for="guestReviewerName">Name</label></li>
+                    <li><input type="text" size="100" id="guestReviewerName" name="guestReviewerName"
+                               form="guestReview"></li>
+                    <li><label for="guestReviewTitle">Guest Review Title</label></li>
+                    <li><input type="text" size="100" id="guestReviewTitle" name="guestReviewTitle" form="guestReview">
+                    </li>
+                    <li><label for="guestReviewContent">Guest Review Content</label></li>
+                    <li><textarea rows="10" cols="100" id="guestReviewContent" name="guestReviewContent"
+                                  form="guestReview"></textarea></li>
+                    <li><input class="submit-button" type="submit" value="Add Review"></li>
+                </ul>
+            </form>
+        </div>
+    </section>
+    <section class="guest-review-content">
+        <div class="guest-review-fields">
+            <h3>Guest Reviews</h3>
+            <ul th:each="currentGuestReview: ${individualReview.getGuestReviews()}">
+                <h4>Guest Reviewer Name</h4>
+                <li th:text="${currentGuestReview.guestReviewerName}"></li>
+                <h4>Guest Review Title</h4>
+                <li th:text="${currentGuestReview.guestReviewTitle}"></li>
+                <h4>Guest Review Content</h4>
+                <li th:text="${currentGuestReview.guestReviewContent}"></li>
+            </ul>
+        </div>
+    </section>
+</main>
+<footer th:insert="general.html :: footer">
+</footer>
+<script src="" async defer></script>
+</body>
+</html>

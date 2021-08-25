@@ -1,0 +1,190 @@
+* {
+    font-family: 'Oswald', sans-serif;
+}
+
+* li {
+    list-style-type: none;
+}
+
+body {
+    max-width: 1000px;
+    margin: 2rem auto;
+}
+
+main {
+    margin: 2rem auto;
+}
+
+main ul {
+    padding: 20px;
+    background-color: #E8E8E8;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+main div p {
+    padding: 20px;
+}
+
+.add-review-content {
+    background-color: #E8E8E8;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.add-review-content h2 {
+    padding: 20px 20px 0px 20px;
+}
+
+.nav-bar ul li a {
+    text-decoration: none;
+    color: #333333;
+}
+
+.nav-bar ul li a:hover {
+    color: white;
+}
+
+footer {
+    background-color: #ffb766;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #333333;
+}
+
+footer ul li a:hover {
+    color: white;
+}
+
+footer p {
+    padding: 15px 15px 0px 15px;
+    color: #333333;
+    text-align: center;
+    text-decoration: underline;
+}
+
+article {
+    background-color: #E8E8E8;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+}
+
+article:hover {
+    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.4);
+}
+
+.review-head-info h1 {
+    text-decoration: underline;
+    font-size: 2rem;
+    margin: 10px 0px -10px 0px;
+}
+
+.review-image {
+    max-width: 80%;
+    height: auto;
+}
+
+.review-content h3 {
+    margin: 10px 0px -10px 0px;
+}
+
+.category-links a {
+    text-decoration: none;
+    color: #333333;
+}
+
+.category-links a:hover {
+    color: #149078;
+}
+
+.review-links a {
+    text-decoration: none;
+    color: #333333;
+}
+
+.review-links a:hover {
+    color: #149078;
+}
+
+.hashtag-links a {
+    text-decoration: none;
+    color: #333333;
+}
+
+.hashtag-links a:hover {
+    color: #149078;
+}
+
+.sport-hashtag-review-links a {
+    text-decoration: none;
+    color: #333333;
+}
+
+.sport-hashtag-review-links a:hover {
+    color: #149078;
+}
+
+.shooter-hashtag-review-links a {
+    text-decoration: none;
+    color: #333333;
+}
+
+.shooter-hashtag-review-links a:hover {
+    color: #149078;
+}
+
+.hashtag-info {
+    background-color: #E8E8E8;
+}
+
+.submit-button {
+    background-color: #ffb766;
+}
+
+.manage-hashtags {
+    padding: 25px;
+}
+
+.all-hashtags {
+    padding: 25px;
+}
+
+.all-hashtags ul {
+    display: flex;
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0);
+    justify-content: center;
+
+}
+
+.all-hashtags ul li {
+    display: flex;
+    padding: 0px 25px;
+}
+
+.game-tags {
+    text-decoration: none;
+}
+
+.game-tags:hover {
+    color: #149078;
+}
+
+.user-review-info {
+    background-color: #E8E8E8;
+}
+
+.user-review {
+    padding: 25px;
+}
+
+.guest-review-content {
+    background-color: #E8E8E8;
+}
+
+.guest-review-fields {
+    padding: 25px;
+}
+
+.guest-review-fields ul h4 {
+    text-decoration: underline;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>
+<html class="no-js"> <![endif]-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Game Reviews - Home</title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="/css/styles.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/layout.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<!--[if lt IE 7]>
+<p class="browsehappy">
+    You are using an <strong>outdated</strong> browser. Please
+    <a href="#">upgrade your browser</a> to improve your experience.
+</p>
+<![endif]-->
+<header th:insert="general.html :: header" id="header">
+</header>
+<main>
+    <section class="reviews">
+        <article th:each="review:${reviews}" class="game-review">
+            <div class="review-head-info">
+                <h1 th:text="${review.gameTitle}"></h1>
+                <h3 th:text="${review.platforms}"></h3>
+            </div>
+            <div class="review-content">
+                <img
+                        class="review-image"
+                        th:src="${review.imageUrl}"
+                        th:alt="${review.imageAltText}"
+                />
+                <h3 th:text="${review.reviewTitle}"></h3>
+                <p th:text="${review.reviewContent}" class="review-text">
+                </p>
+            </div>
+        </article>
+    </section>
+</main>
+<footer th:insert="general.html :: footer">
+</footer>
+<script src="" async defer></script>
+</body>
+</html>

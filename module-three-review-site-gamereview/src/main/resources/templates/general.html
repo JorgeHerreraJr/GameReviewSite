@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<header th:fragment="header" id="header">
+    <nav class="nav-bar">
+        <ul class="navigation-items">
+            <li class="list-item"><a href="/">Home</a></li>
+            <li class="list-item"><a href="/categories">Categories</a></li>
+            <li class="list-item"><a href="/hashtags">Hashtags</a></li>
+        </ul>
+    </nav>
+</header>
+<footer th:fragment="footer">
+    <p>Copyright&copy; Game Reviews 2021</p>
+    <ul class="footer-items">
+        <li class="footer-list-item"><a href="/">Home</a></li>
+        <li class="footer-list-item"><a href="/categories">Categories</a></li>
+        <li class="footer-list-item"><a href="/hashtags">Hashtags</a></li>
+        <li class="footer-list-item"><a href="#header">Back To Top</a></li>
+    </ul>
+</footer>
+</body>
+</html>
